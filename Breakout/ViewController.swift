@@ -1,4 +1,4 @@
-// Will
+// Izhan Arif
 //  ViewController.swift
 //  Breakout
 //
