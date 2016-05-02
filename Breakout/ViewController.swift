@@ -1,4 +1,4 @@
-// Will
+// Theo Kozil
 //  ViewController.swift
 //  Breakout
 //
