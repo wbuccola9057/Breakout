@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="440" y="349"/>
         </scene>
-        <!--View Controller-->
+        <!--Paddle View Controller-->
         <scene sceneID="sW6-4g-dYs">
             <objects>
-                <viewController id="ndw-OA-b9m" sceneMemberID="viewController">
+                <viewController id="ndw-OA-b9m" customClass="PaddleViewController" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNW-KO-ikM"/>
                         <viewControllerLayoutGuide type="bottom" id="cjo-4P-aWJ"/>
