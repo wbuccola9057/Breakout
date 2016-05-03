@@ -15,6 +15,7 @@
 		E73689611CD79E95009A96FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E736895F1CD79E95009A96FD /* LaunchScreen.storyboard */; };
 		E736896C1CD79E96009A96FD /* BreakoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736896B1CD79E96009A96FD /* BreakoutTests.swift */; };
 		E73689771CD79E96009A96FD /* BreakoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73689761CD79E96009A96FD /* BreakoutUITests.swift */; };
+		E76FB42B1CD8EE160092D866 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76FB42A1CD8EE160092D866 /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E73689721CD79E96009A96FD /* BreakoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73689761CD79E96009A96FD /* BreakoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutUITests.swift; sourceTree = "<group>"; };
 		E73689781CD79E96009A96FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76FB42A1CD8EE160092D866 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E73689531CD79E95009A96FD /* AppDelegate.swift */,
 				E73689551CD79E95009A96FD /* ViewController.swift */,
+				E76FB42A1CD8EE160092D866 /* Block.swift */,
 				E73689571CD79E95009A96FD /* Main.storyboard */,
 				E736895D1CD79E95009A96FD /* Assets.xcassets */,
 				E736895F1CD79E95009A96FD /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73689561CD79E95009A96FD /* ViewController.swift in Sources */,
+				E76FB42B1CD8EE160092D866 /* Block.swift in Sources */,
 				E73689541CD79E95009A96FD /* AppDelegate.swift in Sources */,
 				E736895C1CD79E95009A96FD /* Breakout.xcdatamodeld in Sources */,
 			);
@@ -491,6 +495,7 @@
 				E736897D1CD79E96009A96FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E736897E1CD79E96009A96FD /* Build configuration list for PBXNativeTarget "BreakoutTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				E73689801CD79E96009A96FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E73689811CD79E96009A96FD /* Build configuration list for PBXNativeTarget "BreakoutUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				E73689831CD79E96009A96FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
