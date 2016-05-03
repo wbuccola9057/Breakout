@@ -17,14 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breakout!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-HP-DN7">
-                                <rect key="frame" x="246" y="61" width="176" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakout!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-HP-DN7">
+                                <rect key="frame" x="243" y="64" width="114" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="GYA-UF-bcY"/>
+                                    <constraint firstAttribute="height" constant="21" id="Q4t-BY-3e3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
-                                <rect key="frame" x="201" y="294" width="221" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
+                                <rect key="frame" x="190" y="292" width="221" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="aZd-6k-XZB"/>
+                                    <constraint firstAttribute="width" constant="221" id="thM-vm-41t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Click To Play"/>
                                 <connections>
                                     <segue destination="ndw-OA-b9m" kind="presentation" id="C3l-QY-E2y"/>
@@ -32,6 +41,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-225.5" id="VmK-NB-sDI"/>
+                            <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlT-ie-byZ"/>
+                            <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="36" id="paT-Gf-94H"/>
+                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uWg-op-Okd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
