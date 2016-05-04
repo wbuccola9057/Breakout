@@ -14,7 +14,7 @@ class PaddleViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let paddle = UIView(frame: CGRect(x: 200, y: 200, width: 80, height: 20))
+        let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 175, height: 20))
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
         
