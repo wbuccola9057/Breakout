@@ -36,7 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Click To Play"/>
                                 <connections>
-                                    <segue destination="ndw-OA-b9m" kind="presentation" id="C3l-QY-E2y"/>
+                                    <segue destination="ndw-OA-b9m" kind="presentation" modalTransitionStyle="crossDissolve" id="C3l-QY-E2y"/>
                                 </connections>
                             </button>
                         </subviews>
