@@ -27,11 +27,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
-                                <rect key="frame" x="99" y="186" width="423" height="400"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
+                                <rect key="frame" x="89" y="160" width="423" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="aZd-6k-XZB"/>
-                                    <constraint firstAttribute="width" constant="221" id="thM-vm-41t"/>
+                                    <constraint firstAttribute="height" constant="400" id="aZd-6k-XZB"/>
+                                    <constraint firstAttribute="width" constant="423" id="thM-vm-41t"/>
                                 </constraints>
                                 <state key="normal" image="playbtn"/>
                                 <connections>
@@ -43,7 +43,7 @@
                         <constraints>
                             <constraint firstItem="i77-HP-DN7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-225.5" id="VmK-NB-sDI"/>
                             <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlT-ie-byZ"/>
-                            <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="36" id="paT-Gf-94H"/>
+                            <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="paT-Gf-94H"/>
                             <constraint firstItem="i77-HP-DN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uWg-op-Okd"/>
                         </constraints>
                     </view>
