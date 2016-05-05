@@ -27,14 +27,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
-                                <rect key="frame" x="190" y="292" width="221" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
+                                <rect key="frame" x="99" y="186" width="403" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="aZd-6k-XZB"/>
                                     <constraint firstAttribute="width" constant="221" id="thM-vm-41t"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Click To Play"/>
+                                <state key="normal" image="playbtn"/>
                                 <connections>
                                     <segue destination="ndw-OA-b9m" kind="presentation" modalTransitionStyle="crossDissolve" id="C3l-QY-E2y"/>
                                 </connections>
@@ -90,4 +89,7 @@
             <point key="canvasLocation" x="1125" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="playbtn" width="300" height="300"/>
+    </resources>
 </document>
