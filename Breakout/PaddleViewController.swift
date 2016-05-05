@@ -20,4 +20,7 @@ class PaddleViewController: UIViewController {
         
         
     }
+    
+    @IBOutlet var paddleMovement: UIPanGestureRecognizer!
+   
 }
