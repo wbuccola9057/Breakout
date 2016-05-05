@@ -24,7 +24,20 @@ class PaddleViewController: UIViewController {
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PaddleViewController.handleTap(_:)))
+        paddle.addGestureRecognizer(tapGesture)
         
+        func handleTap(sender: UIGestureRecognizer) {
+        let point = sender.locationInView(self.view)
+        paddle.center = point
+        
+        
+        print("Tapped")
+    }
+    
+    
+
+    
     }
     
     @IBAction func myPauseButton(sender: UIButton) {
