@@ -29,6 +29,7 @@ class PaddleViewController: UIViewController {
     
     @IBAction func myPauseButton(sender: UIButton) {
     }
-    @IBOutlet var paddleMovement: UIPanGestureRecognizer!
    
+    @IBAction func paddleMovement(sender: AnyObject) {
+    }
 }
