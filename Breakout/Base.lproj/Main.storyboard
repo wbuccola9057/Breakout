@@ -79,12 +79,13 @@
                             <outletCollection property="gestureRecognizers" destination="pRo-J9-0Gg" appends="YES" id="3ZM-UI-uuz"/>
                         </connections>
                     </view>
-                    <connections>
-                        <outlet property="paddleMovement" destination="pRo-J9-0Gg" id="3bo-p3-LA5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRB-eZ-BwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="pRo-J9-0Gg"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="pRo-J9-0Gg">
+                    <connections>
+                        <action selector="paddleMovement:" destination="ndw-OA-b9m" id="tRM-al-eDG"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1125" y="349"/>
         </scene>
