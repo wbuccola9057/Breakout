@@ -14,10 +14,19 @@ class PaddleViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 175, height: 20))
+        let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
         
         
+        var imageView : UIImageView
+        imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
+        imageView.image = UIImage(named:"ball")
+        self.view.addSubview(imageView)
+
+        
     }
+    
+    @IBOutlet var paddleMovement: UIPanGestureRecognizer!
+   
 }
