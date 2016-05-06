@@ -9,6 +9,8 @@
 import UIKit
 
 class PaddleViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,10 @@ class PaddleViewController: UIViewController {
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
+        
+        let block1 = UIView(frame: CGRect(x: 50, y: 100, width: 100, height: 50))
+        block1.backgroundColor = UIColor.redColor()
+        view.addSubview(block1)
 
         
     }
