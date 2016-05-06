@@ -12,28 +12,31 @@ class PaddleViewController: UIViewController {
     
     let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
 
-        let tapGesture = UIPanGestureRecognizer(target: self, action: Selector("onCustonPan"))
-        //let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
-        paddle.addGestureRecognizer(tapGesture)
         
         func handleTap(sender: UIGestureRecognizer) {
-        let point = sender.locationInView(self.view)
-        paddle.center = point
+            let point = sender.locationInView(view)
+            paddle.center = CGPointMake(point.x, point.y)
+
         
         
         print("Tapped")
     }
-        
+        //ball
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
     
+        
+        let block1 = UIView(frame: CGRect(x: 50, y: 100, width: 100, height: 50))
+        block1.backgroundColor = UIColor.redColor()
+        view.addSubview(block1)
 
     
     }
