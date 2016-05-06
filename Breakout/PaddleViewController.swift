@@ -11,20 +11,30 @@ import UIKit
 class PaddleViewController: UIViewController {
     
     
+    @IBOutlet weak var paddleView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            //let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
+           // paddle.backgroundColor = UIColor.blueColor()
+           // view.addSubview(paddle)
+
+        //func handleTap(sender: UIGestureRecognizer) {
+        //    let point = sender.locationInView(view)
+        //    paddle.center = CGPointMake(point.x, point.y)
+      //  print("Tapped")
+        //}
         
-        let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
-        paddle.backgroundColor = UIColor.blueColor()
-        view.addSubview(paddle)
         
         
+        
+        //ball
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
+    
         
         let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
         block1.backgroundColor = UIColor.redColor()
@@ -46,12 +56,14 @@ class PaddleViewController: UIViewController {
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
 
-        
+    
     }
     
     @IBAction func myPauseButton(sender: UIButton) {
     }
    
     @IBAction func paddleMovement(sender: AnyObject) {
+       
+
     }
 }
