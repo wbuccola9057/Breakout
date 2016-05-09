@@ -79,7 +79,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRB-eZ-BwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="pRo-J9-0Gg">
                     <connections>
-                        <action selector="paddleMovement:" destination="ndw-OA-b9m" id="tRM-al-eDG"/>
+                        <action selector="paddleMovement:" destination="ndw-OA-b9m" id="bIm-By-gow"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
