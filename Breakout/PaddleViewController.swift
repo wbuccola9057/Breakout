@@ -11,20 +11,24 @@ import UIKit
 class PaddleViewController: UIViewController {
     
     
-    @IBOutlet weak var paddleView: UIView!
+    let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        paddle.backgroundColor = UIColor.blueColor()
+        view.addSubview(paddle)
         
-            //let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
-           // paddle.backgroundColor = UIColor.blueColor()
-           // view.addSubview(paddle)
-
-        //func handleTap(sender: UIGestureRecognizer) {
-        //    let point = sender.locationInView(view)
-        //    paddle.center = CGPointMake(point.x, point.y)
-      //  print("Tapped")
-        //}
+        
+        
+        
+        //this is what i am trying to use to make the paddle move
+        
+        func handleMove(sender: UIGestureRecognizer) {
+            let point = sender.locationInView(view)
+            paddle.center = CGPointMake(point.x, point.y)
+            
+            print("Moved")
+        }
         
         
         
