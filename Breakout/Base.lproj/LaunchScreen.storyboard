@@ -24,10 +24,34 @@
                                     <constraint firstAttribute="width" constant="560" id="Pfm-6I-5x0"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yorgos, Will, Theo, Izhan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ble-RJ-xct">
+                                <rect key="frame" x="136" y="360" width="329" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="329" id="08f-3l-2vP"/>
+                                    <constraint firstAttribute="height" constant="101" id="3oc-PZ-4Kw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.28127107694518649" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yia-ji-RaI">
+                                <rect key="frame" x="202" y="258" width="196" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="1O4-KV-QOU"/>
+                                    <constraint firstAttribute="height" constant="83" id="QjN-zc-LRT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="25"/>
+                                <color key="textColor" red="0.052658174446445827" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="yia-ji-RaI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9hr-aD-HDe"/>
+                            <constraint firstItem="ble-RJ-xct" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="110.5" id="CpO-vK-dtZ"/>
                             <constraint firstItem="HGO-xH-vk6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IjP-k3-UPe"/>
+                            <constraint firstItem="yia-ji-RaI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mHE-Jd-zRU"/>
+                            <constraint firstItem="ble-RJ-xct" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mn7-28-drk"/>
                             <constraint firstItem="HGO-xH-vk6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-208" id="uW5-VR-HeT"/>
                         </constraints>
                     </view>
