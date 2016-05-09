@@ -64,6 +64,12 @@ class PaddleViewController: UIViewController {
     }
     
     @IBAction func myPauseButton(sender: UIButton) {
+        let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "Resume", style: .Default, handler: nil)
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
    
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
