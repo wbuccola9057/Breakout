@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PaddleViewController: UIViewController {
+class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
+    var dynamicAnimator = UIDynamicAnimator()
     
     let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
 
@@ -17,8 +18,9 @@ class PaddleViewController: UIViewController {
         super.viewDidLoad()
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
+        dynamicAnimator = UIDynamicAnimator(referenceView: view)
         
-        
+        setupViews()
         
         
         //this is what i am trying to use to make the paddle move
@@ -34,10 +36,7 @@ class PaddleViewController: UIViewController {
         
         
         //ball
-        var imageView : UIImageView
-        imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
-        imageView.image = UIImage(named:"ball")
-        self.view.addSubview(imageView)
+        
     
         
         let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
@@ -62,6 +61,44 @@ class PaddleViewController: UIViewController {
 
     
     }
+    
+    func setupViews() {
+        
+        let imageView : UIImageView
+        imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
+        imageView.image = UIImage(named:"ball")
+        self.view.addSubview(imageView)
+        
+        addDynamicBehavior([imageView])
+        
+    }
+    
+    func addDynamicBehavior(array: [UIImageView]) {
+        let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
+        dynamicItemBehavior.density = 1.0
+        dynamicItemBehavior.friction = 0.0
+        dynamicItemBehavior.resistance = 0.0
+        dynamicItemBehavior.elasticity = 1.0
+        dynamicAnimator.addBehavior(dynamicItemBehavior)
+        
+        let pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
+        pushBehavior.magnitude = 1.0
+        pushBehavior.pushDirection = CGVectorMake(0.5, 0.5)
+        dynamicAnimator.addBehavior(pushBehavior)
+        
+        let collisionBehavior = UICollisionBehavior(items: array)
+        collisionBehavior.translatesReferenceBoundsIntoBoundary = true
+        collisionBehavior.collisionMode = .Everything
+        collisionBehavior.collisionDelegate = self
+        dynamicAnimator.addBehavior(collisionBehavior)
+        
+    }
+    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
+        
+    
+    }
+
+    
     
     @IBAction func myPauseButton(sender: UIButton) {
         let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
