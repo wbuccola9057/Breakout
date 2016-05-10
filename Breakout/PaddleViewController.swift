@@ -110,7 +110,8 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
    
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
-        let point = sender.locationInView(paddle)
+        let point = sender.locationInView(self.view)
+        print(point)
         paddle.center = CGPointMake(point.x, point.y)
     }
        

@@ -74,12 +74,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.53250613323938056" green="0.95596850808024325" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9rL-A8-xO6" appends="YES" id="Pef-IV-Gnv"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRB-eZ-BwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="pRo-J9-0Gg">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9rL-A8-xO6">
                     <connections>
-                        <action selector="paddleMovement:" destination="ndw-OA-b9m" id="bIm-By-gow"/>
+                        <action selector="paddleMovement:" destination="ndw-OA-b9m" id="jn1-R3-UBc"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
