@@ -73,7 +73,7 @@ class PaddleViewController: UIViewController {
     }
    
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
-        let point = sender.locationInView(view)
+        let point = sender.locationInView(paddle)
         paddle.center = CGPointMake(point.x, point.y)
     }
        
