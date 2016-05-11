@@ -75,14 +75,14 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func addDynamicBehavior(array: [UIImageView]) {
         let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior.density = 1.0
+        dynamicItemBehavior.density = 2.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.elasticity = 1.0
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
         let pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
-        pushBehavior.magnitude = 1.0
+        pushBehavior.magnitude = 0.5
         pushBehavior.pushDirection = CGVectorMake(0.5, 0.5)
         dynamicAnimator.addBehavior(pushBehavior)
         
