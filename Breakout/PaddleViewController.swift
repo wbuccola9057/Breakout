@@ -13,19 +13,14 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var dynamicAnimator = UIDynamicAnimator()
     
     let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
-    let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
-    let block2 = UIView(frame: CGRect(x: 160, y: 100, width: 150, height: 25))
-    let block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
-    let block4 = UIView(frame: CGRect(x: 470, y: 100, width: 150, height: 25))
-    let block5 = UIView(frame: CGRect(x: 625, y: 100, width: 140, height: 25))
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
         
-        setupViews()
+        setupImageView()
         
         
         //this is what i am trying to use to make the paddle move
@@ -39,10 +34,23 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
         
-        
         //ball
         
     
+        
+        
+
+    
+    }
+    
+    func setupViews() {
+        let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
+        let block2 = UIView(frame: CGRect(x: 160, y: 100, width: 150, height: 25))
+        let block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
+        let block4 = UIView(frame: CGRect(x: 470, y: 100, width: 150, height: 25))
+        let block5 = UIView(frame: CGRect(x: 625, y: 100, width: 140, height: 25))
+        
+        
         
         block1.backgroundColor = UIColor.redColor()
         view.addSubview(block1)
@@ -58,11 +66,13 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
+        
+        addDynamicBehavior([block1, block2, block3, block4, block5])
+        
 
-    
     }
     
-    func setupViews() {
+    func setupImageView() {
         
         let imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
@@ -73,7 +83,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
     }
     
-    func addDynamicBehavior(array: [UIImageView]) {
+    func addDynamicBehavior(array : [UIImageView]) {
         let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
         dynamicItemBehavior.density = 2.0
         dynamicItemBehavior.friction = 0.0
