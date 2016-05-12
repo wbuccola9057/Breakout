@@ -101,17 +101,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
         func setupViews() {
             
-            let imageView : UIImageView
-            imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
-            imageView.image = UIImage(named:"ball")
-            self.view.addSubview(imageView)
-            addDynamicBehavior([imageView])
-        }
-        
-        func addDynamicBehavior(array: [UIImageView]) {
-            let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
-            dynamicItemBehavior.density = 1000
-            dynamicItemBehavior.resistance = 1000
+         
         }
         func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
             
@@ -134,6 +124,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
         let point = sender.locationInView(self.view)
         print(point)
+        paddle.center = CGPointMake(point.x, paddle.center.y)
         paddle.center = CGPointMake(point.x, point.y)
         
         
