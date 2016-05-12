@@ -107,14 +107,8 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
             
         }
         
-        
-        
         let defaultAction = UIAlertAction(title: "Resume", style: .Default, handler: nil)
         alert.addAction(defaultAction)
-        
-        
-        
-        
         
         presentViewController(alert, animated: true, completion: nil)
     }
