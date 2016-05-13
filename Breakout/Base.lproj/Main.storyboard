@@ -17,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakout!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-HP-DN7">
-                                <rect key="frame" x="243" y="64" width="114" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="GYA-UF-bcY"/>
-                                    <constraint firstAttribute="height" constant="21" id="Q4t-BY-3e3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="21"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-rm-3B9">
                                 <rect key="frame" x="89" y="160" width="423" height="400"/>
                                 <constraints>
@@ -38,15 +28,28 @@
                                     <segue destination="ndw-OA-b9m" kind="presentation" modalTransitionStyle="crossDissolve" id="C3l-QY-E2y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakout!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-HP-DN7">
+                                <rect key="frame" x="213" y="92" width="197" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="GYA-UF-bcY"/>
+                                    <constraint firstAttribute="height" constant="88" id="Q4t-BY-3e3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-225.5" id="VmK-NB-sDI"/>
+                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-164" id="VmK-NB-sDI"/>
                             <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlT-ie-byZ"/>
                             <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="paT-Gf-94H"/>
-                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uWg-op-Okd"/>
+                            <constraint firstItem="i77-HP-DN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11.5" id="uWg-op-Okd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PauseBtn" destination="PDZ-rm-3B9" id="82i-3c-WPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
