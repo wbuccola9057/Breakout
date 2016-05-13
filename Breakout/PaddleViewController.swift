@@ -30,17 +30,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         setupViews()
         
         
-        //this is what i am trying to use to make the paddle move
-        
-        func handleMove(sender: UIGestureRecognizer) {
-            let point = sender.locationInView(view)
-            paddle.center = CGPointMake(point.x, point.y)
-            
-            print("Moved")
-        }
-        
-    
-        
         block1.backgroundColor = UIColor.redColor()
         view.addSubview(block1)
         
@@ -67,7 +56,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         self.view.addSubview(imageView)
         
         addDynamicBehavior([imageView])
-
+        
         
     }
     
@@ -75,7 +64,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
         dynamicItemBehavior.density = 2.0
         dynamicItemBehavior.friction = 0.0
-        //dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.elasticity = 1.0
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
@@ -94,22 +82,19 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
         
-    }
-
+        }
+    
     
     @IBAction func myPauseButton(sender: UIButton) {
         let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
-        func setupViews() {
-            
-         
-        }
-        func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
-            
-        }
+        
+        
         
         let defaultAction = UIAlertAction(title: "Resume", style: .Default, handler: nil)
         alert.addAction(defaultAction)
         
+        
+
         presentViewController(alert, animated: true, completion: nil)
     }
    
@@ -119,7 +104,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         let point = sender.locationInView(self.view)
         print(point)
         paddle.center = CGPointMake(point.x, paddle.center.y)
-        paddle.center = CGPointMake(point.x, point.y)
+        
         
         
     }
