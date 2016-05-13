@@ -12,7 +12,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
     
-    let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
+    var paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
     let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
     let block2 = UIView(frame: CGRect(x: 160, y: 100, width: 150, height: 25))
     let block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
@@ -26,7 +26,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
-        
+
         setupViews()
         
         
@@ -92,6 +92,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         let defaultAction = UIAlertAction(title: "Resume", style: .Default, handler: nil)
         alert.addAction(defaultAction)
+       
         
         
 
