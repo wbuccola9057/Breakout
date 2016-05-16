@@ -17,6 +17,7 @@
 		E73689771CD79E96009A96FD /* BreakoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73689761CD79E96009A96FD /* BreakoutUITests.swift */; };
 		E76FB42B1CD8EE160092D866 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76FB42A1CD8EE160092D866 /* Block.swift */; };
 		E7760DEB1CD8F321000D6BBF /* PaddleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7760DEA1CD8F321000D6BBF /* PaddleViewController.swift */; };
+		E7C2D81E1CEA156D00515FBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2D81D1CEA156D00515FBF /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E73689781CD79E96009A96FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76FB42A1CD8EE160092D866 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		E7760DEA1CD8F321000D6BBF /* PaddleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddleViewController.swift; sourceTree = "<group>"; };
+		E7C2D81D1CEA156D00515FBF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				E73689551CD79E95009A96FD /* ViewController.swift */,
 				E76FB42A1CD8EE160092D866 /* Block.swift */,
 				E73689571CD79E95009A96FD /* Main.storyboard */,
+				E7C2D81D1CEA156D00515FBF /* WebViewController.swift */,
 				E736895D1CD79E95009A96FD /* Assets.xcassets */,
 				E736895F1CD79E95009A96FD /* LaunchScreen.storyboard */,
 				E73689621CD79E95009A96FD /* Info.plist */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73689561CD79E95009A96FD /* ViewController.swift in Sources */,
+				E7C2D81E1CEA156D00515FBF /* WebViewController.swift in Sources */,
 				E76FB42B1CD8EE160092D866 /* Block.swift in Sources */,
 				E73689541CD79E95009A96FD /* AppDelegate.swift in Sources */,
 				E736895C1CD79E95009A96FD /* Breakout.xcdatamodeld in Sources */,
