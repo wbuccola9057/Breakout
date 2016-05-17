@@ -20,6 +20,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         view.addSubview(paddle)
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
         
+        setupViews()
         setupImageView()
         
         
@@ -67,7 +68,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
         
-        addDynamicBehavior([block1, block2, block3, block4, block5])
         
 
     }
@@ -105,9 +105,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
         
-    
     }
-
     
     
     @IBAction func myPauseButton(sender: UIButton) {
