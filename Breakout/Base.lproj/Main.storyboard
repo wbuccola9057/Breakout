@@ -38,10 +38,26 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-1c-R72">
+                                <rect key="frame" x="0.0" y="533" width="191" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="STX-Yj-nLB"/>
+                                    <constraint firstAttribute="height" constant="59" id="ba5-Fx-W9F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="18"/>
+                                <state key="normal" title="ABOUT THE GAME">
+                                    <color key="titleColor" red="1" green="0.071533105149999998" blue="0.15242604739999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ofT-Oc-Qqp" kind="presentation" id="2Nz-DY-1II"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="h4b-1c-R72" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="262.5" id="DaU-9E-y8L"/>
                             <constraint firstItem="i77-HP-DN7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-164" id="VmK-NB-sDI"/>
+                            <constraint firstItem="h4b-1c-R72" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-204.5" id="aoe-eg-b4r"/>
                             <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlT-ie-byZ"/>
                             <constraint firstItem="PDZ-rm-3B9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="paT-Gf-94H"/>
                             <constraint firstItem="i77-HP-DN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11.5" id="uWg-op-Okd"/>
@@ -54,6 +70,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="440" y="349"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="tqm-4c-YQY">
+            <objects>
+                <viewController id="ofT-Oc-Qqp" customClass="WebViewController" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cbv-8n-2k0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Amy-4g-Q2y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EQC-lh-BGC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCM-wC-xHY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="554" id="1dZ-eK-QA8"/>
+                                    <constraint firstAttribute="width" constant="600" id="eHO-OH-MlP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="gYM-ov-4Xq"/>
+                                    <constraint firstAttribute="height" constant="534" id="naC-wL-Gge"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5a-c7-QpP">
+                                <rect key="frame" x="540" y="569" width="60" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1eM-U8-xTj"/>
+                                    <constraint firstAttribute="height" constant="33" id="TWt-eP-svA"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back"/>
+                                <connections>
+                                    <action selector="myButton1:" destination="ofT-Oc-Qqp" eventType="touchUpInside" id="Tun-oL-4TX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50331315445026181" green="0.041262800037054119" blue="0.082667944180491823" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="-23" id="5eX-wp-IWG"/>
+                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" id="Els-If-Jty"/>
+                            <constraint firstItem="L5a-c7-QpP" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" constant="270" id="MPO-cY-UYX"/>
+                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" id="Xht-JG-Vjc"/>
+                            <constraint firstItem="L5a-c7-QpP" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="285.5" id="kSb-cv-mHU"/>
+                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="-13" id="sAj-mk-38p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WebView" destination="UCM-wC-xHY" id="poc-Ks-dN3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXD-ak-neR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="1189"/>
         </scene>
         <!--Paddle View Controller-->
         <scene sceneID="sW6-4g-dYs">
@@ -93,6 +161,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="200" height="151"/>
         <image name="pause" width="512" height="512"/>
         <image name="playbtn" width="300" height="300"/>
     </resources>
