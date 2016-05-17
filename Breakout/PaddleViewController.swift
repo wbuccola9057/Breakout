@@ -28,18 +28,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         setupViews()
         
         
-        //this is what i am trying to use to make the paddle move
-        
-        func handleMove(sender: UIGestureRecognizer) {
-            let point = sender.locationInView(view)
-            paddle.center = CGPointMake(point.x, point.y)
-            
-            print("Moved")
-        }
-        
-        
-        
-        
         //ball
         
     
