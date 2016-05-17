@@ -29,7 +29,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
 
         setupViews()
         
-        
         block1.backgroundColor = UIColor.redColor()
         view.addSubview(block1)
         
@@ -44,25 +43,21 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
-
     
     }
     
     func setupViews() {
-        
         let imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
         
         addDynamicBehavior([imageView])
-        
-        
     }
-    
     func addDynamicBehavior(array: [UIImageView]) {
         let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
         dynamicItemBehavior.density = 2.0
+        dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.elasticity = 1.0
         dynamicAnimator.addBehavior(dynamicItemBehavior)
@@ -78,13 +73,11 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         
-        
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
         
         }
-    
-    
+
     @IBAction func myPauseButton(sender: UIButton) {
         let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
         
