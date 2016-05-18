@@ -12,13 +12,11 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
     
-    var paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
-    let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
-    let block2 = UIView(frame: CGRect(x: 160, y: 100, width: 150, height: 25))
-    let block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
-    let block4 = UIView(frame: CGRect(x: 470, y: 100, width: 150, height: 25))
-    let block5 = UIView(frame: CGRect(x: 625, y: 100, width: 140, height: 25))
-
+    let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
+    
+    var pushBehavior = UIPushBehavior()
+    var dynamicItemBehavior = UIDynamicItemBehavior()
+    var collisionBehavior = UICollisionBehavior()
     
     
     override func viewDidLoad() {
@@ -30,15 +28,15 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         setupViews()
         setupImageView()
         
+    }
+    
+    func setupViews() {
+        let block1 = UIView(frame: CGRect(x: 5, y: 100, width: 150, height: 25))
+        let block2 = UIView(frame: CGRect(x: 160, y: 100, width: 150, height: 25))
+        let block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
+        let block4 = UIView(frame: CGRect(x: 470, y: 100, width: 150, height: 25))
+        let block5 = UIView(frame: CGRect(x: 625, y: 100, width: 140, height: 25))
         
-        //this is what i am trying to use to make the paddle move
-        
-        func handleMove(sender: UIGestureRecognizer) {
-            let point = sender.locationInView(view)
-            paddle.center = CGPointMake(point.x, point.y)
-            
-            print("Moved")
-        }
         
         
         block1.backgroundColor = UIColor.redColor()
@@ -55,31 +53,36 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
-    
+        
+        
+
     }
     
-    func setupViews() {
+    func setupImageView() {
+        
         let imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         imageView.image = UIImage(named:"ball")
         self.view.addSubview(imageView)
         
         addDynamicBehavior([imageView])
+        
     }
-    func addDynamicBehavior(array: [UIImageView]) {
-        let dynamicItemBehavior = UIDynamicItemBehavior(items: array)
+    
+    func addDynamicBehavior(array : [UIImageView]) {
+        dynamicItemBehavior = UIDynamicItemBehavior(items: array)
         dynamicItemBehavior.density = 2.0
-        dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.friction = 0.0
+        dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.elasticity = 1.0
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
-        let pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
+        pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
         pushBehavior.magnitude = 0.5
         pushBehavior.pushDirection = CGVectorMake(0.5, 0.5)
         dynamicAnimator.addBehavior(pushBehavior)
         
-        let collisionBehavior = UICollisionBehavior(items: array)
+        collisionBehavior = UICollisionBehavior(items: array)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
         collisionBehavior.collisionDelegate = self
@@ -88,17 +91,21 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
         
-        }
-
+    }
+    
+    
     @IBAction func myPauseButton(sender: UIButton) {
         let alert = UIAlertController(title: "Game Paused", message: "Tap 'Resume' To Resume", preferredStyle: .Alert)
-        
-        
+        dynamicAnimator.removeBehavior(pushBehavior)
+        dynamicAnimator.removeBehavior(collisionBehavior)
+        dynamicAnimator.removeBehavior(dynamicItemBehavior)
         
         let defaultAction = UIAlertAction(title: "Resume", style: .Default, handler: nil)
-        alert.addAction(defaultAction)
-       
         
+        
+        
+        
+        alert.addAction(defaultAction)
         
 
         presentViewController(alert, animated: true, completion: nil)
@@ -114,7 +121,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
     }
-       
 
 }
 
