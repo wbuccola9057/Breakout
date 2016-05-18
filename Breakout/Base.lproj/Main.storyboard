@@ -142,6 +142,13 @@
                                     <action selector="myPauseButton:" destination="ndw-OA-b9m" eventType="touchUpInside" id="NSW-Lq-gIp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-q2-KSf">
+                                <rect key="frame" x="20" y="70" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resumeGame:" destination="ndw-OA-b9m" eventType="touchUpInside" id="ov9-SO-E34"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.53250613323938056" green="0.95596850808024325" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
