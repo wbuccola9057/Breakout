@@ -139,12 +139,12 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     //resume game
     @IBAction func resumeGame(sender: UIButton) {
-        //dynamicAnimator.addBehavior(pushBehavior)
-        //dynamicAnimator.addBehavior(collisionBehavior)
-        //dynamicAnimator.addBehavior(dynamicItemBehavior)
-        dynamicAnimator.addBehavior(dynamicItemBehavior2)
-        dynamicAnimator.addBehavior(pushBehavior2)
-        dynamicAnimator.addBehavior(collisionBehavior2)
+        dynamicAnimator.addBehavior(pushBehavior)
+        dynamicAnimator.addBehavior(collisionBehavior)
+        dynamicAnimator.addBehavior(dynamicItemBehavior)
+        //dynamicAnimator.addBehavior(dynamicItemBehavior2)
+        //dynamicAnimator.addBehavior(pushBehavior2)
+        //dynamicAnimator.addBehavior(collisionBehavior2)
 
     }
 
