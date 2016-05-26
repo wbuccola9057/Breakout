@@ -83,16 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCM-wC-xHY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="554" id="1dZ-eK-QA8"/>
-                                    <constraint firstAttribute="width" constant="600" id="eHO-OH-MlP"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="gYM-ov-4Xq"/>
-                                    <constraint firstAttribute="height" constant="534" id="naC-wL-Gge"/>
-                                </constraints>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5a-c7-QpP">
                                 <rect key="frame" x="540" y="569" width="60" height="33"/>
                                 <constraints>
@@ -104,20 +94,21 @@
                                     <action selector="myButton1:" destination="ofT-Oc-Qqp" eventType="touchUpInside" id="Tun-oL-4TX"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XaW-fE-85d">
+                                <rect key="frame" x="0.0" y="111" width="600" height="342"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Breakout begins with eight rows of bricks, with each two rows a different color. The color order from the bottom up is yellow, green, orange and red. Using a single ball, the player must knock down as many bricks as possible by using the walls and/or the paddle below to ricochet the ball against the bricks and eliminate them. If the player's paddle misses the ball's rebound, he or she will lose a turn. The player has three turns to try to clear two screens of bricks. Yellow bricks earn one point each, green bricks earn three points, orange bricks earn five points and the top-level red bricks score seven points each. The paddle shrinks to one-half its size after the ball has broken through the red row and hit the upper wall. Ball speed increases at specific intervals: after four hits, after twelve hits, and after making contact with the orange and red rows.</mutableString>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.50331315445026181" green="0.041262800037054119" blue="0.082667944180491823" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="-23" id="5eX-wp-IWG"/>
-                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" id="Els-If-Jty"/>
                             <constraint firstItem="L5a-c7-QpP" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" constant="270" id="MPO-cY-UYX"/>
-                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerX" secondItem="EQC-lh-BGC" secondAttribute="centerX" id="Xht-JG-Vjc"/>
                             <constraint firstItem="L5a-c7-QpP" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="285.5" id="kSb-cv-mHU"/>
-                            <constraint firstItem="UCM-wC-xHY" firstAttribute="centerY" secondItem="EQC-lh-BGC" secondAttribute="centerY" constant="-13" id="sAj-mk-38p"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="WebView" destination="UCM-wC-xHY" id="poc-Ks-dN3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXD-ak-neR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
