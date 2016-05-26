@@ -10,13 +10,10 @@ import UIKit
 
 class WebViewController: UIViewController {
 
-    @IBOutlet weak var WebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var URL = NSURL(string: "https://en.wikipedia.org/wiki/Breakout_(video_game)")
-        WebView.loadRequest(NSURLRequest(URL: URL!))
-    }
+           }
 
     
     @IBAction func myButton1(sender: UIButton) {
