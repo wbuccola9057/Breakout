@@ -93,7 +93,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicItemBehavior.density = 2.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
-        dynamicItemBehavior.elasticity = 1.324240
+        dynamicItemBehavior.elasticity = 0.5
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
         pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
@@ -107,12 +107,12 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionDelegate = self
         
         
-        
         collisionBehavior.addItem(block2)
         collisionBehavior.addItem(block1)
         collisionBehavior.addItem(block4)
         collisionBehavior.addItem(block3)
         collisionBehavior.addItem(block5)
+        
         dynamicAnimator.addBehavior(collisionBehavior)
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
@@ -120,10 +120,10 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     //2 (dont use this one)
     func addDynamicBehavior2(array : [UIImageView]) {
         dynamicItemBehavior2 = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior2.density = 2.0
+        dynamicItemBehavior2.density = 0.0
         dynamicItemBehavior2.friction = 0.0
         dynamicItemBehavior2.resistance = 0.0
-        dynamicItemBehavior2.elasticity = 2.0
+        dynamicItemBehavior2.elasticity = 0.0
         
         pushBehavior = UIPushBehavior(items: array, mode: .Continuous)
         pushBehavior.magnitude = 50.0
