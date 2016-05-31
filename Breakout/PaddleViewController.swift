@@ -29,6 +29,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var collisionBehavior = UICollisionBehavior()
     var paddleCollisionBehavior = UICollisionBehavior()
     var paddleDynamicBehavior = UIDynamicItemBehavior()
+    var block1Behavior = UIDynamicItemBehavior()
     
     //2
     var pushBehavior2 = UIPushBehavior()
@@ -92,18 +93,27 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     //1 (use this one)
     func addDynamicBehavior(array : [UIImageView]) {
         dynamicItemBehavior = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior.density = 2.0
+        dynamicItemBehavior.density = 1.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
-        dynamicItemBehavior.elasticity = 1
+        dynamicItemBehavior.elasticity = 1.0
+        dynamicItemBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
         paddleDynamicBehavior = UIDynamicItemBehavior(items: [paddle])
-        paddleDynamicBehavior.density = 100
+        paddleDynamicBehavior.density = 1000000.0
         paddleDynamicBehavior.friction = 0.0
         paddleDynamicBehavior.resistance = 0.0
         paddleDynamicBehavior.elasticity = 0.0
         dynamicAnimator.addBehavior(paddleDynamicBehavior)
+        
+        block1Behavior = UIDynamicItemBehavior(items: [block1,block2,block3,block4,block5])
+        block1Behavior.density = 1000000.0
+        block1Behavior.friction = 0.0
+        block1Behavior.resistance = 0.0
+        block1Behavior.elasticity = 0.0
+        block1Behavior.allowsRotation = false
+        dynamicAnimator.addBehavior(block1Behavior)
         
         
         pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
@@ -152,7 +162,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior2.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior2.collisionMode = .Everything
         collisionBehavior2.collisionDelegate = self
-        
     }
     func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
     
@@ -169,6 +178,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         let point = sender.locationInView(self.view)
         print(point)
         paddle.center = CGPointMake(point.x, paddle.center.y)
+        dynamicAnimator.updateItemUsingCurrentState(paddle)
     }
     
     
