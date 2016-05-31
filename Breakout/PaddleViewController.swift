@@ -93,7 +93,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     //1 (use this one)
     func addDynamicBehavior(array : [UIImageView]) {
         dynamicItemBehavior = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior.density = 2.0
+        dynamicItemBehavior.density = 1.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
         dynamicItemBehavior.elasticity = 1.0
@@ -101,17 +101,19 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
         paddleDynamicBehavior = UIDynamicItemBehavior(items: [paddle])
-        paddleDynamicBehavior.density = 100000.0
+        paddleDynamicBehavior.density = 1000000.0
         paddleDynamicBehavior.friction = 0.0
         paddleDynamicBehavior.resistance = 0.0
         paddleDynamicBehavior.elasticity = 1
+        paddleDynamicBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(paddleDynamicBehavior)
         
         block1Behavior = UIDynamicItemBehavior(items: [block1,block2,block3,block4,block5])
-        block1Behavior.density = 100000.0
+        block1Behavior.density = 1000000.0
         block1Behavior.friction = 0.0
         block1Behavior.resistance = 0.0
         block1Behavior.elasticity = 0.0
+        block1Behavior.allowsRotation = false
         dynamicAnimator.addBehavior(block1Behavior)
         
         
@@ -177,6 +179,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         let point = sender.locationInView(self.view)
         print(point)
         paddle.center = CGPointMake(point.x, paddle.center.y)
+        dynamicAnimator.updateItemUsingCurrentState(paddle)
     }
     
     
