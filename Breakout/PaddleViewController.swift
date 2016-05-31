@@ -27,6 +27,8 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var pushBehavior = UIPushBehavior()
     var dynamicItemBehavior = UIDynamicItemBehavior()
     var collisionBehavior = UICollisionBehavior()
+    var paddleBehavior = UIDynamicItemBehavior()
+
     
     //2
     var pushBehavior2 = UIPushBehavior()
@@ -42,7 +44,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
 
         setupViews()
         setupImageView()
-
     }
     
     func setupViews() {
@@ -93,27 +94,31 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicItemBehavior.density = 2.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
-        dynamicItemBehavior.elasticity = 0.5
+        dynamicItemBehavior.elasticity = 1.0
+        dynamicItemBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
+        paddleBehavior = UIDynamicItemBehavior(items: [paddle])
+        paddleBehavior.density = 100000.0
+        paddleBehavior.friction = 0.0
+        paddleBehavior.resistance = 0.0
+        paddleBehavior.elasticity = 0.5
+        dynamicAnimator.addBehavior(paddleBehavior)
+        
         pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
-        pushBehavior.magnitude = -1.0
+        pushBehavior.magnitude = 1.0
         pushBehavior.pushDirection = CGVectorMake(-0.5, -0.5)
         dynamicAnimator.addBehavior(pushBehavior)
         
-        collisionBehavior = UICollisionBehavior(items: array)
+        collisionBehavior = UICollisionBehavior(items: [theBall, paddle])
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
         collisionBehavior.collisionDelegate = self
         
-        
-        collisionBehavior.addItem(block2)
-        collisionBehavior.addItem(block1)
-        collisionBehavior.addItem(block4)
-        collisionBehavior.addItem(block3)
-        collisionBehavior.addItem(block5)
-        
+
         dynamicAnimator.addBehavior(collisionBehavior)
+        
+        
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
 
@@ -129,13 +134,14 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         pushBehavior.magnitude = 50.0
         pushBehavior.pushDirection = CGVectorMake(-0.5, -0.5)
         
-        collisionBehavior2 = UICollisionBehavior(items: array)
+        collisionBehavior2 = UICollisionBehavior(items: [paddle, theBall])
         collisionBehavior2.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior2.collisionMode = .Everything
         collisionBehavior2.collisionDelegate = self
-        
     }
     func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
+    
+    
     
     //pause game
     @IBAction func myPauseButton(sender: UIButton) {
