@@ -102,7 +102,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddleDynamicBehavior.density = 100
         paddleDynamicBehavior.friction = 0.0
         paddleDynamicBehavior.resistance = 0.0
-        paddleDynamicBehavior.elasticity = 1
+        paddleDynamicBehavior.elasticity = 0.0
         dynamicAnimator.addBehavior(paddleDynamicBehavior)
         
         
