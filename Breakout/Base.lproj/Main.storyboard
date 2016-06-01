@@ -126,13 +126,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pla-sS-J6x">
-                                <rect key="frame" x="20" y="20" width="99" height="30"/>
-                                <state key="normal" title="Change Image">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9q-Gy-04X">
+                                <rect key="frame" x="24" y="20" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="changeImage:" destination="ndw-OA-b9m" eventType="touchUpInside" id="BoU-YX-tAt"/>
+                                    <action selector="resetButton:" destination="ndw-OA-b9m" eventType="touchUpInside" id="bzy-5z-eP2"/>
                                 </connections>
                             </button>
                         </subviews>
