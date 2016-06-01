@@ -22,6 +22,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var block4 = UIView()
     var block5 = UIView()
 
+    var counter = 0
     
     //1
     var pushBehavior = UIPushBehavior()
@@ -165,14 +166,11 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior2.collisionDelegate = self
     }
     func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
-    
-    //pause game
-    @IBAction func myPauseButton(sender: UIButton) {
-        dynamicAnimator.removeBehavior(pushBehavior)
-        dynamicAnimator.removeBehavior(collisionBehavior)
-        dynamicAnimator.removeBehavior(dynamicItemBehavior)
-    }
    
+    @IBAction func changeImage(sender: AnyObject) {
+        theBall.image = UIImage(named: "giraffe")
+        
+    }
     
     //paddle
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
@@ -182,18 +180,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.updateItemUsingCurrentState(paddle)
     }
     
-    
-    //resume game
-    @IBAction func resumeGame(sender: UIButton) {
-        dynamicAnimator.addBehavior(pushBehavior)
-        dynamicAnimator.addBehavior(collisionBehavior)
-        dynamicAnimator.addBehavior(dynamicItemBehavior)
-        //dynamicAnimator.addBehavior(dynamicItemBehavior2)
-        //dynamicAnimator.addBehavior(pushBehavior2)
-        //dynamicAnimator.addBehavior(collisionBehavior2)
-
-    }
-
 }
 
 
