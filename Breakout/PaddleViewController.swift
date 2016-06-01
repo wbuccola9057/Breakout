@@ -22,11 +22,15 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var block4 = UIView()
     var block5 = UIView()
 
+    var counter = 0
     
     //1
     var pushBehavior = UIPushBehavior()
     var dynamicItemBehavior = UIDynamicItemBehavior()
     var collisionBehavior = UICollisionBehavior()
+    var paddleCollisionBehavior = UICollisionBehavior()
+    var paddleDynamicBehavior = UIDynamicItemBehavior()
+    var block1Behavior = UIDynamicItemBehavior()
     
     //2
     var pushBehavior2 = UIPushBehavior()
@@ -90,11 +94,29 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     //1 (use this one)
     func addDynamicBehavior(array : [UIImageView]) {
         dynamicItemBehavior = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior.density = 2.0
+        dynamicItemBehavior.density = 1.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
-        dynamicItemBehavior.elasticity = 1.324240
+        dynamicItemBehavior.elasticity = 1.0
+        dynamicItemBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(dynamicItemBehavior)
+        
+        paddleDynamicBehavior = UIDynamicItemBehavior(items: [paddle])
+        paddleDynamicBehavior.density = 1000000.0
+        paddleDynamicBehavior.friction = 0.0
+        paddleDynamicBehavior.resistance = 0.0
+        paddleDynamicBehavior.elasticity = 1
+        paddleDynamicBehavior.allowsRotation = false
+        dynamicAnimator.addBehavior(paddleDynamicBehavior)
+        
+        block1Behavior = UIDynamicItemBehavior(items: [block1,block2,block3,block4,block5])
+        block1Behavior.density = 1000000.0
+        block1Behavior.friction = 0.0
+        block1Behavior.resistance = 0.0
+        block1Behavior.elasticity = 0.0
+        block1Behavior.allowsRotation = false
+        dynamicAnimator.addBehavior(block1Behavior)
+        
         
         pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
         pushBehavior.magnitude = -1.0
@@ -114,17 +136,26 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.addItem(block3)
         collisionBehavior.addItem(block5)
         dynamicAnimator.addBehavior(collisionBehavior)
+        
+        paddleCollisionBehavior = UICollisionBehavior(items: [paddle, theBall])
+        paddleCollisionBehavior.translatesReferenceBoundsIntoBoundary = true
+        paddleCollisionBehavior.collisionMode = .Everything
+        paddleCollisionBehavior.collisionDelegate = self
+        
+        dynamicAnimator.addBehavior(paddleCollisionBehavior)
+        
+        
+    
     }
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
 
     //2 (dont use this one)
     func addDynamicBehavior2(array : [UIImageView]) {
-        dynamicItemBehavior2 = UIDynamicItemBehavior(items: array)
-        dynamicItemBehavior2.density = 2.0
+        dynamicItemBehavior2 = UIDynamicItemBehavior(items: [paddle])
+        dynamicItemBehavior2.density = 10
         dynamicItemBehavior2.friction = 0.0
         dynamicItemBehavior2.resistance = 0.0
         dynamicItemBehavior2.elasticity = 2.0
-        
         pushBehavior = UIPushBehavior(items: array, mode: .Continuous)
         pushBehavior.magnitude = 50.0
         pushBehavior.pushDirection = CGVectorMake(-0.5, -0.5)
@@ -133,37 +164,22 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior2.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior2.collisionMode = .Everything
         collisionBehavior2.collisionDelegate = self
-        
     }
     func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
-    
-    //pause game
-    @IBAction func myPauseButton(sender: UIButton) {
-        dynamicAnimator.removeBehavior(pushBehavior)
-        dynamicAnimator.removeBehavior(collisionBehavior)
-        dynamicAnimator.removeBehavior(dynamicItemBehavior)
-    }
    
+    @IBAction func changeImage(sender: AnyObject) {
+        theBall.image = UIImage(named: "giraffe")
+        
+    }
     
     //paddle
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
         let point = sender.locationInView(self.view)
         print(point)
         paddle.center = CGPointMake(point.x, paddle.center.y)
+        dynamicAnimator.updateItemUsingCurrentState(paddle)
     }
     
-    
-    //resume game
-    @IBAction func resumeGame(sender: UIButton) {
-        dynamicAnimator.addBehavior(pushBehavior)
-        dynamicAnimator.addBehavior(collisionBehavior)
-        dynamicAnimator.addBehavior(dynamicItemBehavior)
-        //dynamicAnimator.addBehavior(dynamicItemBehavior2)
-        //dynamicAnimator.addBehavior(pushBehavior2)
-        //dynamicAnimator.addBehavior(collisionBehavior2)
-
-    }
-
 }
 
 
