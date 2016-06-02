@@ -12,7 +12,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
     
-    let paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
+
     
     var theBall = UIImageView()
     
@@ -21,7 +21,8 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     var block3 = UIView()
     var block4 = UIView()
     var block5 = UIView()
-
+    var paddle = UIView()
+    
     var counter = 0
     
     //1
@@ -40,8 +41,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paddle.backgroundColor = UIColor.blueColor()
-        view.addSubview(paddle)
+        
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
 
         setupViews()
@@ -74,6 +74,9 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block5.backgroundColor = UIColor.redColor()
         view.addSubview(block5)
         
+        paddle = UIView(frame: CGRect(x: 300, y: 900, width: 180, height: 15))
+        paddle.backgroundColor = UIColor.blueColor()
+        view.addSubview(paddle)
     }
     
     
@@ -168,10 +171,19 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
    
-    @IBAction func changeImage(sender: AnyObject) {
-        theBall.image = UIImage(named: "giraffe")
+    @IBAction func resetButton(sender: AnyObject) {
+        paddle.removeFromSuperview()
+        block1.removeFromSuperview()
+        block2.removeFromSuperview()
+        block3.removeFromSuperview()
+        block4.removeFromSuperview()
+        block5.removeFromSuperview()
         
+        setupViews()
+        view.addSubview(paddle)
     }
+    
+    
     
     //paddle
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
