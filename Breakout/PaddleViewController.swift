@@ -106,6 +106,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddleDynamicBehavior.friction = 0.0
         paddleDynamicBehavior.resistance = 0.0
         paddleDynamicBehavior.elasticity = 0.0
+        paddleDynamicBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(paddleDynamicBehavior)
         
         block1Behavior = UIDynamicItemBehavior(items: [block1,block2,block3,block4,block5])
@@ -140,6 +141,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddleCollisionBehavior.translatesReferenceBoundsIntoBoundary = true
         paddleCollisionBehavior.collisionMode = .Everything
         paddleCollisionBehavior.collisionDelegate = self
+
         
         dynamicAnimator.addBehavior(paddleCollisionBehavior)
         
