@@ -46,6 +46,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
 
         setupViews()
         setupImageView()
+    
 
     }
     
@@ -90,6 +91,11 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         self.view.addSubview(theBall)
         addDynamicBehavior([theBall])
         
+        func deleteBlock() {
+            if theBall.topAnchor == block3.bottomAnchor{
+                block3.backgroundColor = UIColor.purpleColor()
+            }
+        }
         
     }
     
@@ -177,9 +183,10 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block3.removeFromSuperview()
         block4.removeFromSuperview()
         block5.removeFromSuperview()
+        theBall.removeFromSuperview()
         
         setupViews()
-        view.addSubview(paddle)
+        
     }
     
     
