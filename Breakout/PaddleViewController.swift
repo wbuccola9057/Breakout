@@ -100,7 +100,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicItemBehavior.density = 1.0
         dynamicItemBehavior.friction = 0.0
         dynamicItemBehavior.resistance = 0.0
-        dynamicItemBehavior.elasticity = 1.2
+        dynamicItemBehavior.elasticity = 1
         dynamicItemBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
