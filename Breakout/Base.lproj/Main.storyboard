@@ -49,7 +49,7 @@
                                     <color key="titleColor" red="1" green="0.071533105149999998" blue="0.15242604739999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ofT-Oc-Qqp" kind="presentation" id="2Nz-DY-1II"/>
+                                    <segue destination="ofT-Oc-Qqp" kind="presentation" identifier="customSegue" modalTransitionStyle="flipHorizontal" id="qRz-xJ-Xec"/>
                                 </connections>
                             </button>
                         </subviews>
