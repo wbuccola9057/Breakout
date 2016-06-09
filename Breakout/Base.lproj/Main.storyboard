@@ -25,7 +25,7 @@
                                 </constraints>
                                 <state key="normal" image="playbtn"/>
                                 <connections>
-                                    <segue destination="ndw-OA-b9m" kind="presentation" modalTransitionStyle="crossDissolve" id="C3l-QY-E2y"/>
+                                    <segue destination="ndw-OA-b9m" kind="presentation" modalTransitionStyle="flipHorizontal" id="C3l-QY-E2y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakout!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i77-HP-DN7">
