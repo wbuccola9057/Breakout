@@ -135,22 +135,27 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         if item2.isEqual(block1)
         {
             block1.removeFromSuperview()
+            collisionBehavior.removeItem(block1)
         }
         if item2.isEqual(block2)
         {
             block2.removeFromSuperview()
+            collisionBehavior.removeItem(block2)
         }
         if item2.isEqual(block3)
         {
             block3.removeFromSuperview()
+            collisionBehavior.removeItem(block3)
         }
         if item2.isEqual(block4)
         {
             block4.removeFromSuperview()
+            collisionBehavior.removeItem(block4)
         }
         if item2.isEqual(block5)
         {
             block5.removeFromSuperview()
+            collisionBehavior.removeItem(block5)
         }
     }
 
