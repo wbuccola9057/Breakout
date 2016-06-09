@@ -155,22 +155,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     }
 
     //2 (dont use this one)
-    func addDynamicBehavior2(array : [UIImageView]) {
-        dynamicItemBehavior2 = UIDynamicItemBehavior(items: [paddle])
-        dynamicItemBehavior2.density = 10
-        dynamicItemBehavior2.friction = 0.0
-        dynamicItemBehavior2.resistance = 0.0
-        dynamicItemBehavior2.elasticity = 2.0
-        pushBehavior = UIPushBehavior(items: array, mode: .Continuous)
-        pushBehavior.magnitude = 50.0
-        pushBehavior.pushDirection = CGVectorMake(-0.5, -0.5)
-        
-        collisionBehavior2 = UICollisionBehavior(items: array)
-        collisionBehavior2.translatesReferenceBoundsIntoBoundary = true
-        collisionBehavior2.collisionMode = .Everything
-        collisionBehavior2.collisionDelegate = self
-    }
-    func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint)
+        func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint)
     {
     
     }
