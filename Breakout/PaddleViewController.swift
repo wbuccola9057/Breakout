@@ -11,9 +11,7 @@ import UIKit
 class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
-    
 
-    
     var theBall = UIImageView()
     
     var block1 = UIView()
@@ -25,20 +23,13 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var counter = 0
     
-    //1
     var pushBehavior = UIPushBehavior()
     var dynamicItemBehavior = UIDynamicItemBehavior()
     var collisionBehavior = UICollisionBehavior()
     var paddleCollisionBehavior = UICollisionBehavior()
     var paddleDynamicBehavior = UIDynamicItemBehavior()
     var block1Behavior = UIDynamicItemBehavior()
-    
-    //2
-    var pushBehavior2 = UIPushBehavior()
-    var dynamicItemBehavior2 = UIDynamicItemBehavior()
-    var collisionBehavior2 = UICollisionBehavior()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +37,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
 
         setupViews()
         setupImageView()
-
+        
     }
     
     func setupViews() {
@@ -56,8 +47,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block3 = UIView(frame: CGRect(x: 315, y: 100, width: 150, height: 25))
         block4 = UIView(frame: CGRect(x: 470, y: 100, width: 150, height: 25))
         block5 = UIView(frame: CGRect(x: 625, y: 100, width: 140, height: 25))
-        
-        
         
         block1.backgroundColor = UIColor.redColor()
         view.addSubview(block1)
@@ -78,23 +67,16 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddle.backgroundColor = UIColor.blueColor()
         view.addSubview(paddle)
     }
-    
-    
-    
 
     func setupImageView() {
-        
         
         theBall  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         theBall.image = UIImage(named:"ball")
         self.view.addSubview(theBall)
         addDynamicBehavior([theBall])
         
-        
     }
     
-    
-    //1 (use this one)
     func addDynamicBehavior(array : [UIImageView]) {
         dynamicItemBehavior = UIDynamicItemBehavior(items: array)
         dynamicItemBehavior.density = 1.0
@@ -120,7 +102,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block1Behavior.allowsRotation = false
         dynamicAnimator.addBehavior(block1Behavior)
         
-        
         pushBehavior = UIPushBehavior(items: array, mode: .Instantaneous)
         pushBehavior.magnitude = -1.0
         pushBehavior.pushDirection = CGVectorMake(-0.5, -0.5)
@@ -131,12 +112,10 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior.collisionMode = .Everything
         collisionBehavior.collisionDelegate = self
         
-        
-        
-        collisionBehavior.addItem(block2)
         collisionBehavior.addItem(block1)
-        collisionBehavior.addItem(block4)
+        collisionBehavior.addItem(block2)
         collisionBehavior.addItem(block3)
+        collisionBehavior.addItem(block4)
         collisionBehavior.addItem(block5)
         dynamicAnimator.addBehavior(collisionBehavior)
         
@@ -149,8 +128,6 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
         dynamicAnimator.addBehavior(paddleCollisionBehavior)
         
-        
-    
     }
     
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint)
@@ -205,33 +182,49 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block3.removeFromSuperview()
         block4.removeFromSuperview()
         block5.removeFromSuperview()
+        theBall.removeFromSuperview()
         
         
         setupViews()
-        view.addSubview(paddle)
+        view.addSubview(theBall)
     }
-    
-    
     
     //paddle
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
         let point = sender.locationInView(self.view)
-        print(point)
         paddle.center = CGPointMake(point.x, paddle.center.y)
         dynamicAnimator.updateItemUsingCurrentState(paddle)
+        dynamicAnimator.updateItemUsingCurrentState(theBall)
+
+        if theBall.center.y >= paddle.center.y {
+            
+            theBall.removeFromSuperview()
+            paddle.removeFromSuperview()
+            block1.removeFromSuperview()
+            block2.removeFromSuperview()
+            block3.removeFromSuperview()
+            block4.removeFromSuperview()
+            block5.removeFromSuperview()
+
+            
+            let alert = UIAlertController(title: "Alert", message: "Game Over", preferredStyle: UIAlertControllerStyle.Alert)
+            dynamicAnimator.removeBehavior(dynamicItemBehavior)
+            dynamicAnimator.removeBehavior(collisionBehavior)
+            dynamicAnimator.removeBehavior(pushBehavior)
+            
+
+            alert.addAction(UIAlertAction(title: "Restart", style: UIAlertActionStyle.Default, handler: nil))
+            dynamicAnimator.addBehavior(dynamicItemBehavior)
+            dynamicAnimator.addBehavior(collisionBehavior)
+            dynamicAnimator.addBehavior(pushBehavior)
+            
+            setupViews()
+            setupImageView()
+            view.addSubview(theBall)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            
+        }
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
