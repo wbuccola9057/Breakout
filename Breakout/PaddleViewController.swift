@@ -36,7 +36,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
 
         setupViews()
-        setupBall()
+        setupImageView()
         
     }
     
@@ -68,7 +68,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         view.addSubview(paddle)
     }
 
-    func setupBall() {
+    func setupImageView() {
         
         theBall  = UIImageView(frame: CGRect(x: 385, y: 875, width: 25, height: 25))
         theBall.image = UIImage(named:"ball")
@@ -129,20 +129,53 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
    
     @IBAction func resetButton(sender: AnyObject) {
-            }
+        paddle.removeFromSuperview()
+        block1.removeFromSuperview()
+        block2.removeFromSuperview()
+        block3.removeFromSuperview()
+        block4.removeFromSuperview()
+        block5.removeFromSuperview()
+        theBall.removeFromSuperview()
+        
+        setupViews()
+        view.addSubview(theBall)
+    }
     
     //paddle
     @IBAction func paddleMovement(sender: UIPanGestureRecognizer) {
         let point = sender.locationInView(self.view)
         paddle.center = CGPointMake(point.x, paddle.center.y)
         dynamicAnimator.updateItemUsingCurrentState(paddle)
+        dynamicAnimator.updateItemUsingCurrentState(theBall)
 
         if theBall.center.y >= paddle.center.y {
+            
             theBall.removeFromSuperview()
             paddle.removeFromSuperview()
+            block1.removeFromSuperview()
+            block2.removeFromSuperview()
+            block3.removeFromSuperview()
+            block4.removeFromSuperview()
+            block5.removeFromSuperview()
+
             
-            setupBall()
+            let alert = UIAlertController(title: "Alert", message: "Game Over", preferredStyle: UIAlertControllerStyle.Alert)
+            dynamicAnimator.removeBehavior(dynamicItemBehavior)
+            dynamicAnimator.removeBehavior(collisionBehavior)
+            dynamicAnimator.removeBehavior(pushBehavior)
+            
+
+            alert.addAction(UIAlertAction(title: "Restart", style: UIAlertActionStyle.Default, handler: nil))
+            dynamicAnimator.addBehavior(dynamicItemBehavior)
+            dynamicAnimator.addBehavior(collisionBehavior)
+            dynamicAnimator.addBehavior(pushBehavior)
+            
             setupViews()
+            setupImageView()
+            view.addSubview(theBall)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
             
         }
     }
