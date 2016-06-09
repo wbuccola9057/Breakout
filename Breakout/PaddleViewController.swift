@@ -144,6 +144,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         paddleCollisionBehavior.translatesReferenceBoundsIntoBoundary = true
         paddleCollisionBehavior.collisionMode = .Everything
         paddleCollisionBehavior.collisionDelegate = self
+        
 
         
         dynamicAnimator.addBehavior(paddleCollisionBehavior)
@@ -151,7 +152,30 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         
     
     }
-    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
+    
+    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint)
+    {
+        if item2.isEqual(block1)
+        {
+            block1.removeFromSuperview()
+        }
+        if item2.isEqual(block2)
+        {
+            block2.removeFromSuperview()
+        }
+        if item2.isEqual(block3)
+        {
+            block3.removeFromSuperview()
+        }
+        if item2.isEqual(block4)
+        {
+            block4.removeFromSuperview()
+        }
+        if item2.isEqual(block5)
+        {
+            block5.removeFromSuperview()
+        }
+    }
 
     //2 (dont use this one)
     func addDynamicBehavior2(array : [UIImageView]) {
@@ -169,7 +193,10 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         collisionBehavior2.collisionMode = .Everything
         collisionBehavior2.collisionDelegate = self
     }
-    func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {}
+    func collisionBehavior2(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint)
+    {
+    
+    }
    
     @IBAction func resetButton(sender: AnyObject) {
         paddle.removeFromSuperview()
@@ -178,6 +205,7 @@ class PaddleViewController: UIViewController, UICollisionBehaviorDelegate {
         block3.removeFromSuperview()
         block4.removeFromSuperview()
         block5.removeFromSuperview()
+        
         
         setupViews()
         view.addSubview(paddle)
